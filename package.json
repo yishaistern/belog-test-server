@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test run",
     "tsc": "tsc",
-    "start": "node ./build/app.js",
+    "start": "ts-node-dev --respawn --transpile-only ./app/app.ts",
     "dev": "ts-node-dev --respawn --transpile-only ./app/app.ts",
     "prod": "tsc && node ./build/app.js"
   },
