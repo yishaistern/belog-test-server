@@ -8,6 +8,7 @@ import { ResponseStatus, TowerListResponse, FunctionsResponse } from './infterce
 import { isLooged, logUser } from './auth';
 // Create a new express app instance
 const app: express.Application = express();
+const port = process.env.PORT || PORT;
 app.use(session({secret: "Shh, its a secret!"}));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -19,7 +20,7 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log('App is listening on port ' + PORT + '!');
 });
 
