@@ -28,6 +28,7 @@ var reponses = __importStar(require("./reponse-handle"));
 var auth_1 = require("./auth");
 // Create a new express app instance
 var app = express();
+var port = process.env.PORT || varibales_1.PORT;
 app.use(session({ secret: "Shh, its a secret!" }));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -38,7 +39,7 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log('App is listening on port ' + varibales_1.PORT + '!');
 });
 /**
